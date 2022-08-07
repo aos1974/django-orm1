@@ -1,0 +1,13 @@
+https://stackoverflow.com/questions/5574042/string-slugification-in-python
+
+There is python package named awesome-slugify:
+
+pip install awesome-slugify
+Works like this:
+
+from slugify import slugify
+
+slugify('one kožušček')  # one-kozuscek
+awesome-slugify github page
+
+https://proproprogs.ru/django/dobavlyaem-slagi-slug-k-url-adresam
