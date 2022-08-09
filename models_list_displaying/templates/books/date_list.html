@@ -12,10 +12,17 @@
                 <div class="book col-md-4">
                     <h2>{{ book.name }}</h2>
                     <p>Автор: {{ book.author }}</p>
-                    <p>Дата публикации: <a href="{% url 'pub_date' book.pub_date %}"> {{ book.pub_date|date:'Y-m-d' }}</a>
-                    </p>
+                    <p>Дата публикации: {{ book.pub_date|date:'Y-m-d' }}</p>
                 </div>
             {% endfor %}
+        </div>
+        <div class="footer">
+            {% if prev_date != Null %}
+                <a href="{% url 'pub_date' prev_date.pub_date %}"> << {{ prev_date.pub_date|date:'Y-m-d' }}</a>
+            {% endif %}
+            {% if next_date != Null %}
+                <a href="{% url 'pub_date' next_date.pub_date %}"> {{ next_date.pub_date|date:'Y-m-d' }} >></a>
+            {% endif %}
         </div>
     </div>
 {% endblock %}
